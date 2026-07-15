@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contactez-Nous - SARIS SARL</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="../index.html" class="header__logo">
+        <img src="../assets/images/logo.png" alt="SARIS SARL - BTP, Logistique, Services Globaux" style="height:55px;width:auto;">
+      </a>
+      <nav class="header__nav">
+        <a href="../index.html">Accueil</a>
+        <a href="about.html">Qui sommes-nous ?</a>
+        <a href="poles.html">Nos Pôles</a>
+        <a href="secteurs.html">Nos Secteurs</a>
+        <a href="careers.html">Carrières</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+      <div class="header__actions">
+        <div class="lang-switch">
+          <button data-lang="fr" class="active">FR</button>
+          <button data-lang="en">EN</button>
+        </div>
+        <a href="contact.html" class="btn btn--primary btn--small">Contactez-nous</a>
+        <div class="menu-toggle">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="nav-overlay"></div>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Contactez-Nous</h1>
+      <p>Notre équipe est à votre disposition pour répondre à toutes vos questions</p>
+      <div class="breadcrumb">
+        <a href="../index.html">Accueil</a>
+        <span>/</span>
+        <span>Contact</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Left: Contact Form -->
+        <div class="contact-form-card animate">
+          <h2>Envoyez-nous un message</h2>
+          <p class="mt-2" style="color: var(--gray); margin-bottom: 30px;">Remplissez le formulaire ci-dessous et nous vous répondrons dans les meilleurs délais.</p>
+          <form id="contactForm" data-validate>
+            <div class="form-group">
+              <label for="nom">Nom <span style="color: var(--secondary);">*</span></label>
+              <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+            </div>
+            <div class="form-group">
+              <label for="prenom">Prénom <span style="color: var(--secondary);">*</span></label>
+              <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email <span style="color: var(--secondary);">*</span></label>
+              <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+            </div>
+            <div class="form-group">
+              <label for="telephone">Téléphone</label>
+              <input type="tel" id="telephone" name="telephone" placeholder="+243 ...">
+            </div>
+            <div class="form-group">
+              <label for="societe">Société</label>
+              <input type="text" id="societe" name="societe" placeholder="Nom de votre société">
+            </div>
+            <div class="form-group">
+              <label for="objet">Objet <span style="color: var(--secondary);">*</span></label>
+              <select id="objet" name="objet" required>
+                <option value="" disabled selected>Sélectionnez un objet</option>
+                <option value="devis">Demande de devis</option>
+                <option value="partenariat">Partenariat</option>
+                <option value="information">Information</option>
+                <option value="reclamation">Réclamation</option>
+                <option value="autre">Autre</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message <span style="color: var(--secondary);">*</span></label>
+              <textarea id="message" name="message" rows="6" placeholder="Votre message..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary form-submit">
+              <i class="fas fa-paper-plane"></i> Envoyer le message
+            </button>
+          </form>
+        </div>
+
+        <!-- Right: Contact Info -->
+        <div class="contact-info-card animate-right">
+          <div class="contact-info-item">
+            <div class="contact-info-item__icon">
+              <i class="fas fa-location-dot"></i>
+            </div>
+            <div>
+              <h4>Adresse</h4>
+              <p>N° 1134B Avenue MPEYE, quartier GOLF TSHAMALALE, Commune ANNEXE, Lubumbashi</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-item__icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div>
+              <h4>Téléphone</h4>
+              <p>+243 992 057 204</p>
+              <p>+243 835 362 454</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-item__icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div>
+              <h4>Email</h4>
+              <p>contact@sarisarl.com</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-item__icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div>
+              <h4>Heures d'ouverture</h4>
+              <p>Lundi - Vendredi : 07h30 - 17h00</p>
+              <p>Samedi : 07h30 - 12h00</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Map -->
+      <div class="contact-map animate">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63371.78207487935!2d27.456!3d-11.664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19d2935f53a4e2e9%3A0xd9e9052fcadbb10!2sLubumbashi%2C%20Democratic%20Republic%20of%20the%20Congo!5e0!3m2!1sfr!2s!4v1700000000000!5m2!1sfr!2s"
+          width="100%"
+          height="350"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__about">
+          <img src="../assets/images/logo.png" alt="SARIS SARL" style="height:60px;width:auto;margin-bottom:16px;">
+          <p>Société de services multi-spécialités engagée dans le développement durable et la satisfaction de nos clients en République Démocratique du Congo.</p>
+          <div class="footer__social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>Liens Rapides</h4>
+          <ul class="footer__links">
+            <li><a href="apropos.html">À Propos</a></li>
+            <li><a href="secteurs.html">Secteurs</a></li>
+            <li><a href="poles.html">Nos Pôles</a></li>
+            <li><a href="carrieres.html">Carrières</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Nos Pôles</h4>
+          <ul class="footer__links">
+            <li><a href="poles.html">BTP & Génie Civil</a></li>
+            <li><a href="poles.html">Logistique</a></li>
+            <li><a href="poles.html">Sécurité</a></li>
+            <li><a href="poles.html">Digital & IT</a></li>
+            <li><a href="poles.html">Maintenance</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul class="footer__contact">
+            <li>
+              <i class="fas fa-location-dot"></i>
+              <span>N° 1134B Avenue MPEYE, quartier GOLF TSHAMALALE, Commune ANNEXE, Lubumbashi</span>
+            </li>
+            <li>
+              <i class="fas fa-phone"></i>
+              <span>+243 992 057 204 / +243 835 362 454</span>
+            </li>
+            <li>
+              <i class="fas fa-envelope"></i>
+              <span>contact@sarisarl.com</span>
+            </li>
+          </ul>
+          <div class="footer__newsletter">
+            <form>
+              <input type="email" placeholder="Votre email">
+              <button type="submit">→</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2025 SARIS SARL. Tous droits réservés.</p>
+        <p><a href="#">Politique de confidentialité</a> | <a href="#">Conditions d'utilisation</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button id="backToTop" class="btn btn--primary" style="position:fixed;bottom:30px;right:30px;border-radius:50%;width:50px;height:50px;display:flex;align-items:center;justify-content:center;padding:0;z-index:999;opacity:0;visibility:hidden;transition:all 0.3s ease;">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script>
+    const backToTop = document.getElementById('backToTop');
+    if (backToTop) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+          backToTop.style.opacity = '1';
+          backToTop.style.visibility = 'visible';
+        } else {
+          backToTop.style.opacity = '0';
+          backToTop.style.visibility = 'hidden';
+        }
+      });
+    }
+  </script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
