@@ -263,8 +263,9 @@
     <i class="fas fa-arrow-up"></i>
   </button>
 
-  <script type="module">
-    import supabase from '../js/supabase.js';
+  <script>
+    const SB_URL = 'https://knxypigpvpwhjnxdjgmw.supabase.co';
+    const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtueHlwaWdwdnB3aGpueGRqZ213Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4Mzk1NTI1MywiZXhwIjoyMDk5NTMxMjUzfQ.6bI2is-A1bm8y88TivTGwpSvJXIssfFcxlpwpgeNtQI';
 
     document.querySelector('#careers-public form').addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -272,7 +273,6 @@
       const origText = btn.innerHTML;
       btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi...';
       btn.disabled = true;
-
       const data = {
         nom: document.getElementById('nom').value.trim(),
         prenom: document.getElementById('prenom').value.trim(),
@@ -281,21 +281,22 @@
         poste_souhaite: document.getElementById('poste').value,
         message: document.getElementById('lettre').value.trim()
       };
-
-      const { error } = await supabase.createCandidature(data);
-      if (error) {
+      try {
+        const res = await fetch(SB_URL + '/rest/v1/candidatures', {
+          method: 'POST',
+          headers: { 'apikey': SB_KEY, 'Authorization': 'Bearer ' + SB_KEY, 'Content-Type': 'application/json', 'Prefer': 'return=representation' },
+          body: JSON.stringify(data)
+        });
+        if (res.ok) {
+          btn.innerHTML = '<i class="fas fa-check"></i> Candidature envoyée !';
+          btn.style.background = '#27ae60';
+          e.target.reset();
+        } else { throw new Error(); }
+      } catch(err) {
         btn.innerHTML = '<i class="fas fa-exclamation-circle"></i> Erreur';
         btn.style.background = '#e74c3c';
-      } else {
-        btn.innerHTML = '<i class="fas fa-check"></i> Candidature envoyée !';
-        btn.style.background = '#27ae60';
-        e.target.reset();
       }
-      setTimeout(() => {
-        btn.innerHTML = origText;
-        btn.style.background = '';
-        btn.disabled = false;
-      }, 3000);
+      setTimeout(() => { btn.innerHTML = origText; btn.style.background = ''; btn.disabled = false; }, 3000);
     });
   </script>
   <script src="../js/main.js"></script>
