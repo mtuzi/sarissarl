@@ -121,8 +121,9 @@
             </div>
             <div>
               <h4>Téléphone</h4>
-              <p>+243 992 057 204</p>
-              <p>+243 835 362 454</p>
+              <p><a href="tel:+243992057204" style="color:inherit;text-decoration:none;">+243 992 057 204</a></p>
+              <p><a href="tel:+243835362454" style="color:inherit;text-decoration:none;">+243 835 362 454</a></p>
+              <p style="margin-top:8px;"><a href="https://wa.me/243992057204" target="_blank" style="color:#25D366;text-decoration:none;font-weight:600;"><i class="fab fa-whatsapp"></i> WhatsApp</a></p>
             </div>
           </div>
           <div class="contact-info-item">
@@ -131,7 +132,7 @@
             </div>
             <div>
               <h4>Email</h4>
-              <p>contact@sarisarl.com</p>
+              <p><a href="mailto:contact@sarisarl.com" style="color:inherit;text-decoration:none;">contact@sarisarl.com</a></p>
             </div>
           </div>
           <div class="contact-info-item">
@@ -193,8 +194,8 @@
           <h4>Contact</h4>
           <ul class="footer__contact">
             <li><i class="fas fa-map-marker-alt"></i><span>N° 1134B Av. MPEYE, Q/GOLF TSHAMALALE, Commune ANNEXE, Lubumbashi</span></li>
-            <li><i class="fas fa-phone"></i><span>+243 992 057 204<br>+243 835 362 454</span></li>
-            <li><i class="fas fa-envelope"></i><span>contact@sarisarl.com</span></li>
+            <li><i class="fas fa-phone"></i><span><a href="tel:+243992057204" style="color:inherit;text-decoration:none;">+243 992 057 204</a><br><a href="tel:+243835362454" style="color:inherit;text-decoration:none;">+243 835 362 454</a></span></li>
+            <li><i class="fas fa-envelope"></i><span><a href="mailto:contact@sarisarl.com" style="color:inherit;text-decoration:none;">contact@sarisarl.com</a></span></li>
             <li><i class="fas fa-clock"></i><span>Lun-Ven: 07h30-17h00<br>Sam: 07h30-12h00</span></li>
           </ul>
         </div>
@@ -226,9 +227,6 @@
   </button>
 
   <script>
-    const SB_URL = 'https://knxypigpvpwhjnxdjgmw.supabase.co';
-    const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtueHlwaWdwdnB3aGpueGRqZ213Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4Mzk1NTI1MywiZXhwIjoyMDk5NTMxMjUzfQ.6bI2is-A1bm8y88TivTGwpSvJXIssfFcxlpwpgeNtQI';
-
     const backToTop = document.getElementById('backToTop');
     if (backToTop) {
       window.addEventListener('scroll', () => {
@@ -253,10 +251,19 @@
         message: document.getElementById('message').value.trim()
       };
       try {
-        const res = await fetch(SB_URL + '/rest/v1/messages', {
+        const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
           method: 'POST',
-          headers: { 'apikey': SB_KEY, 'Authorization': 'Bearer ' + SB_KEY, 'Content-Type': 'application/json', 'Prefer': 'return=representation' },
-          body: JSON.stringify(data)
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            _subject: 'Nouveau message de contact - SARIS SARL',
+            nom: data.nom,
+            prenom: data.prenom,
+            email: data.email,
+            telephone: data.telephone,
+            societe: data.societe,
+            sujet: data.sujet,
+            message: data.message
+          })
         });
         if (res.ok) {
           btn.innerHTML = '<i class="fas fa-check"></i> Message envoyé !';
